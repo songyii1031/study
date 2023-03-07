@@ -1,0 +1,1 @@
+document.getElementById("hello").innerHTML = '왜 안바뀌지'; 
