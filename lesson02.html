@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lesson2</title> 
-    <link rel="stylesheet" href="css/main.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson2 파라미터 문법</title>
+   <link rel="stylesheet" href="css/main.css">
 </head>
+
 <body>
-    <div id="alert" class="alert-box">
-       <p> Docuemnt - Box01 </p>
-       <button id="close" class="close_btn" onclick="proJext()">닫기</button>
-    </div>
-    <!-- onclick으로 명령주기 -->
-    <button onclick="openBtn()">버튼</button>
-    
- 
-    <script> 
-    // 닫기
-     function proJext() {
-        document.getElementById('alert').style.display ='none';
-     }
+   <div id="alert" class="alert-box">
+      <p id="al_txt"> Docuemnt - Box01 아이디를 입력하세요.</p>
+      <button id="close" class="close_btn" onclick="openBtn('none');">닫기</button>
+   </div>
+   <!-- onclick으로 명령주기 -->
+   <!-- <button onclick="openBtn('block'); txtCng('아이디를 입력하세요.');">버튼1</button>
+    <button onclick="openBtn('block'); txtCng('비밀번호를 입력해 주세요.');">버튼2</button> -->
 
-    //  열기
-     function openBtn(a) {
-        document.getElementById('alert').style.display ='block';
-     }
+   <button onclick="아이디비번('block', '아이디 입력')">버튼1</button>
+   <button onclick="아이디비번('block', '비번 입력')">버튼2</button>
 
-    </script>
+   <script>
 
+      function openBtn(a) {
+         document.getElementById('alert').style.display = a;
+      }
+     
+      // function 작명() {
+      //    document.getElementById('alert').style.display = 'block';
+      //    document.getElementById('al_txt').innerHTML = '아이디 입력하셈';
+      // }
+
+      // function 비번() {
+      //    document.getElementById('alert').style.display = 'block';
+      //    document.getElementById('al_txt').innerHTML = '비번 입력하셈';
+      // }
+
+      function 아이디비번(a, b) {
+         document.getElementById('alert').style.display = a;
+         document.getElementById('al_txt').innerHTML = b;
+      }
+
+   </script>
+   <!-- 파라미터 -->
 </body>
+
 </html>
