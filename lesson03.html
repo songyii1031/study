@@ -5,34 +5,37 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>lesson2</title>
+   <title>lesson2 클래스 네임 셀렉터</title>
    <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
    <div id="alert" class="alert-box">
-      <p> Docuemnt - Box01 </p>
-      <button id="close" class="close_btn" onclick="proJext()">닫기</button>
+      <p class="title"> Docuemnt - Box01 아이디를 입력하세요.</p>
+      <button id="close" class="close_btn">닫기</button>
    </div>
-   <!-- onclick으로 명령주기 -->
-   <button onclick="openBtn()">버튼</button>
 
+
+   <button class="title" onclick="아이디비번('block', '아이디 입력')">버튼1</button>
+   <button onclick="아이디비번('block', '비번 입력')">버튼2</button>
 
    <script>
 
+      // 닫기버튼 addEventListener
+      document.getElementById('close').addEventListener('mouseover', function(){
+         document.getElementById('alert').style.display = 'none';
+         
+      });
 
-      //  열기
-      function openBtn() {
-         document.getElementById('alert').style.display = 'block';
+      // 열기
+      function openBtn(a) {
+         document.getElementById('alert').style.display = a;
       }
 
-      function plus(a, b) {
-         3 + a
+      function 아이디비번(a, b) {
+         document.getElementById('alert').style.display = a;
+         document.getElementsByClassName('title')[0].innerHTML = b;
       }
-
-      plus(1);
-      plus(3);
-      plus(4);
 
    </script>
 
