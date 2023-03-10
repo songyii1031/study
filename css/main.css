@@ -7,3 +7,40 @@
     border-radius: 30px;
     display: none;
 }
+
+/* 모달창 */
+button {
+    cursor: pointer;
+}
+
+.black-bg {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+    padding: 30px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.white-bg {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px; 
+    height: 0;
+    transition: all 0.5s;
+}
+
+.show-modal {
+    visibility: visible;
+    opacity: 1;
+    height: 100%;
+}
+
+.show-modal .white-bg  {
+    height: 102px;
+}
+
+/* 애니메이션 주기 */

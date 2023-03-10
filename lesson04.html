@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson4 jQuery</title>
+   <link rel="stylesheet" href="css/main.css">
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body> 
+
+   <div class="black-bg">
+      <div class="white-bg">
+         <h4>로그인 하세요</h4>
+         <button class="btn tbn-danger" id="close">닫기</button>
+      </div>
+   </div>
+
+   <button id="login">로그인</button>
+
+   <!-- 버튼 누르면 모달창 띄우기(자바스크립트로) -->
+   <script> 
+
+      // document.querySelector('#login').addEventListener('click', function(){
+      //    document.querySelectorAll('.black-bg')[0].style.divplay = 'block';
+      // });
+
+      // document.querySelector('#close').addEventListener('click', function(){
+      //    document.querySelectorAll('.black-bg')[0].style.divplay = 'none';
+      // });
+
+     $('#login').on('click', function( ){
+         $('.black-bg').addClass('show-modal');
+     });
+     $('#close').on('click', function( ){
+         $('.black-bg').removeClass('show-modal');
+     });
+ 
+   </script>  
+</body>
+
+</html>
