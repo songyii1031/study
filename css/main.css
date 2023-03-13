@@ -44,3 +44,10 @@ button {
 }
 
 /* 애니메이션 주기 */
+
+
+/* lesson5 */
+.main-bg {
+    padding: 100px 20px;
+    background: lightgray ;
+}
