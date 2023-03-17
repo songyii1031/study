@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson5 변수</title>
+   <link rel="stylesheet" href="css/main.css">
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+   <span class="badge bg-dark">Dark 🔄</span>
+   
+<div class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+         <span class="navbar-brand">Jssop</span>
+
+         <span class="badge bg-dark">Dark</span>
+
+         <button class="navbar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+      </div>
+</div>
+
+   <script> 
+
+      var count = 0; //클릭횟수
+
+      $('.badge').on('click', function(){
+         count = count += 1;
+
+         // console.log(count);
+
+         if( count % 2 == 0 ) {
+            //짝수
+            $('.badge').text('짝수');
+
+         } else {
+            $('.badge').text('홀수');
+         }
+
+         console.log(count);
+      })
+
+    
+
+      
+
+      
+   </script>
+</body>
+
+</html>
