@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson5 369게임</title>
+   <link rel="stylesheet" href="css/main.css">
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+   <div id="reset"></div>
+
+   <script>
+   clapTSn(81);
+   passTest(50,50);
+   ssnGame(123);
+      // clapTSn();
+
+      // function clapTSn() {
+      //    var userNumber = prompt("숫자를입력하세요");
+      //    var a = document.getElementById('reset');
+
+      //    if (userNumber != null) {
+
+      //       if (userNumber % 3 === 0) {
+      //          a.innerHTML = userNumber + "은 3의 배수입니다.";
+      //          console.log('박수');
+      //       }
+      //       else {
+      //          a.innerHTML = userNumber + "은 3의 배수가 아닙니다.";
+      //       }
+      //    }
+
+
+      // }
+      
+      function clapTSn(num) {
+         if ( num % 9 == 0) {
+            console.log('박수X2');
+         } else if( num % 3 == 0 ) {
+            console.log('박수');
+         }
+         else {
+            console.log('통과');
+         }
+      }
+
+      function passTest(a, b) {
+         if(  a < 40 || b < 40 ) {
+            console.log('불합격'); 
+         } else if( a + b >= 120) {
+            console.log('합격');
+         } else {
+            console.log('불합격');
+         } 
+      }
+
+      function ssnGame(num2) {
+         let result;
+
+         if( num2 < 10 ) {
+            result.num2;
+         }
+         let str = String(num2);
+         
+         for( let i = 1; i < str.length+1; i = i*10) {
+            if( num2 >= 10*i ) {
+               result = ((num2 % 10*i) - (num2 % i)) / i;
+            }
+            return result;
+         }
+
+         let number = ssnGame(12345); 
+         console.log(number);
+      }
+
+
+   </script>
+</body>
+
+</html>
