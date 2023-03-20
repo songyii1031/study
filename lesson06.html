@@ -5,85 +5,58 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-   <title>lesson5 369게임</title>
-=======
    <title>lesson5 변수</title>
->>>>>>> c2a8309061e5df628adf5ed9a28e424152f81bad
    <link rel="stylesheet" href="css/main.css">
    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
       integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body >
+   <span class="badge bg-dark">Dark 🔄</span>
+   
+<div class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+         <span class="navbar-brand">Jssop</span>
 
-   <div id="reset"></div>
+         <span class="badge bg-dark">Dark</span>
 
-   <script>
-   clapTSn(81);
-   passTest(50,50);
-   ssnGame(123);
-      // clapTSn();
+         <button class="navbar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+      </div>
+</div>
 
-      // function clapTSn() {
-      //    var userNumber = prompt("숫자를입력하세요");
-      //    var a = document.getElementById('reset');
+   <script> 
 
-      //    if (userNumber != null) {
+      var count = 0; //클릭횟수
 
-      //       if (userNumber % 3 === 0) {
-      //          a.innerHTML = userNumber + "은 3의 배수입니다.";
-      //          console.log('박수');
-      //       }
-      //       else {
-      //          a.innerHTML = userNumber + "은 3의 배수가 아닙니다.";
-      //       }
-      //    }
+      $('.badge').on('click', function(){
+         count = count += 1;
 
+         // console.log(count);
 
-      // }
-      
-      function clapTSn(num) {
-         if ( num % 9 == 0) {
-            console.log('박수X2');
-         } else if( num % 3 == 0 ) {
-            console.log('박수');
-         }
-         else {
-            console.log('통과');
-         }
-      }
-
-      function passTest(a, b) {
-         if(  a < 40 || b < 40 ) {
-            console.log('불합격'); 
-         } else if( a + b >= 120) {
-            console.log('합격');
+         if( count % 2 == 0 ) {
+            //짝수
+            $('.badge').html('bg-light');
+            $('body').removeClass('dark');
          } else {
-            console.log('불합격');
-         } 
-      }
-
-      function ssnGame(num2) {
-         let result;
-
-         if( num2 < 10 ) {
-            result.num2;
+            $('.badge').html('bg-dark');
+            $('body').addClass('dark');
          }
-         let str = String(num2);
+
+         console.log(count);
+      })
+
+      function 함수() {
+            var 이름 ='kim';
+
+            
+      }
          
-         for( let i = 1; i < str.length+1; i = i*10) {
-            if( num2 >= 10*i ) {
-               result = ((num2 % 10*i) - (num2 % i)) / i;
-            }
-            return result;
-         }
 
-         let number = ssnGame(12345); 
-         console.log(number);
-      }
+      
 
-
+      
    </script>
 </body>
 
