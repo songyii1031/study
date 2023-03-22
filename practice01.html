@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="black-bg">
+        <div class="white-bg">
+           <h4>로그인 하세요</h4> 
+  
+           <form action="success.html">
+              <div class="my-3">
+                 <input type="text" class="form-control" id="email">
+              </div>
+              <div class="my-3">
+                 <input type="password" class="form-control" id="pass">
+              </div>
+              <button type="submit" class="btn btn-primary" id="send">전송</button>
+              <button type="button" class="btn btn-danger" id="close">닫기</button>
+           </form>
+           <!-- form:서버로 전송되어지게 만들어주는 것 adtion:url;-->
+  
+        </div>
+     </div>
+
+     <script>
+        $('form').on('submit', function(e){
+         e.preventDefault();
+
+         var mail = document.getElementById('email').value; 
+         if( mail === ''){
+            alert('아이디를 입력하세요.');
+         }
+         if(/\S+@\S+.\S+/.test(mail) == false) {
+            alert('이메일 형식 아님');
+            console.log(mail);
+         }
+
+         var pw = document.getElementById('pass').value; 
+         if( pw === '') {
+            alert('비밀번호를 입력하세요.');
+         } else if (pw.length < 6 ){
+            alert('6글자 이상 입력하세요');
+         } 
+
+         if(/[A-Z]/.test(pw) == false) {
+            alert('하나 이상의 대문자를 입력해 주세요.');
+         }
+      });
+     </script>
+</body>
+</html>
