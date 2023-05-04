@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.slide_container {
+    width: 300vw;
+    /* transform: translateX(-100vw); */
+    transition: all 1s ;
+}
+
+.slide_box {
+    width: 100vw;
+    float: left;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.slide_box:nth-child(1) {
+    background-color: beige;
+}
+.slide_box:nth-child(2) {
+    background-color: rgb(200, 248, 234);
+}
+.slide_box:nth-child(3) {
+    background-color: rgb(226, 227, 245);
+}

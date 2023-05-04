@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/slide.css">
+    <title>vw 슬라이드</title>
+</head>
+
+<body>
+    <div style="overflow: hidden">
+        <div class="slide_container">
+            <div class="slide_box">
+                <img src="images/img1.png" alt="">
+            </div>
+            <div class="slide_box">
+                <img src="images/img2.png" alt="">
+            </div>
+            <div class="slide_box">
+                <img src="images/img3.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <button class="slide-1">1</button>
+    <button class="slide-2">2</button>
+    <button class="slide-3">3</button>
+
+    <script>
+
+        $('.slide-1').on("click", function () {
+            $('.slide_container').css('transform', 'translateX(0vw)');
+        });
+
+        $('.slide-2').on("click", function () {
+            $('.slide_container').css('transform', 'translateX(-100vw)');
+        });
+
+        $('.slide-3').on("click", function () {
+            $('.slide_container').css('transform', 'translateX(-200vw)');
+        });
+
+    </script>
+</body>
+
+</html>
