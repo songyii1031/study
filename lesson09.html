@@ -26,23 +26,56 @@
         </div>
     </div>
 
+    <button class="prev">이전</button>
     <button class="slide-1">1</button>
     <button class="slide-2">2</button>
     <button class="slide-3">3</button>
+    <button class="next">다음</button>
+
 
     <script>
+     
 
-        $('.slide-1').on("click", function () {
-            $('.slide_container').css('transform', 'translateX(0vw)');
+        // $('.slide-1').on("click", function () {
+        //     $('.slide_container').css('transform', 'translateX(0vw)');
+        //     지금사진 == 1;
+        // });
+
+        // $('.slide-2').on("click", function () {
+        //     $('.slide_container').css('transform', 'translateX(-100vw)');
+        //     지금사진 == 2;
+        // });
+
+        // $('.slide-3').on("click", function () {
+        //     $('.slide_container').css('transform', 'translateX(-200vw)');
+        //     지금사진 == 3;
+        // });
+
+
+        var 지금사진 = 1;
+        $('.next').on('click', function () {
+          
+            if (지금사진 >= 4) {
+                $('.slide_container').css('transform', 'translateX(-200vw)');
+                지금사진 += 1;
+
+            } else {
+                $('.slide_container').css('transform', 'translateX(-'+ 지금사진 +'00vw)');
+                지금사진 += 1;
+            }
         });
 
-        $('.slide-2').on("click", function () {
-            $('.slide_container').css('transform', 'translateX(-100vw)');
-        });
+        $('.prev').on('click', function () {
 
-        $('.slide-3').on("click", function () {
-            $('.slide_container').css('transform', 'translateX(-200vw)');
-        });
+            if (지금사진 <= 0) {
+                $('.slide_container').css('transform', 'translateX(0vw)');
+                 
+            } else {
+                $('.slide_container').css('transform', 'translateX(-'+(지금사진 -2 )+'00vw)');
+                지금사진 -= 1;
+            }
+        })
+ 
 
     </script>
 </body>
