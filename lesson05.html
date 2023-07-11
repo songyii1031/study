@@ -36,9 +36,7 @@
          <!-- form:서버로 전송되어지게 만들어주는 것 adtion:url;-->
 
       </div>
-   </div>
-
-   <button id="login">로그인</button>
+   </div> 
 
    <script> 
       $('#login').on('click', function () {
@@ -94,7 +92,19 @@
       });
 
     
-      
+      document.querySelector('.black-bg').addEventListener('click', function(e){
+        // e.target; 유저가 실제로 누른것
+        // e.currentTarget; 이벤트리스너 달린곳
+        // e.preventDefault(); 클릭 안한것처럼해주세요
+        // e.stopImmediatePropagation(); 상위 요소 이벤트 퍼블링 중단해주세요
+        
+        if ( e.target == document.querySelector('.black-bg') ) {
+         document.querySelector('.black-bg').classList.remove('show-modal') ; 
+        }
+
+        
+      });
+
    </script>
 </body>
 
