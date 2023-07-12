@@ -8,28 +8,87 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"
         integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/tab_m.css">
-    <title>탭메뉴2</title>
-   
+    <title>Object-데이터 바인딩</title>
+
 </head>
 
 <body>
-  
+
     <div class="container mt-3">
         <div class="card p-3">
-            <span class="main-name">이름</span>
+            <!-- <span class="main-name">이름</span>
             <span class="main-age">나이</span>
-            <span class="main-mbti">MBTI</span>
-        </div> 
+            <span class="main-mbti">MBTI</span> -->
+
+            <div class="card_box" id="card_box1">
+                <div class="img_box">
+                    <p>600X700</p>
+                </div>
+                <p class="name">상품명</p>
+                <p class="price">가격</p>
+            </div>
+            <div class="card_box" id="card_box2">
+                <div class="img_box">
+                    <p>600X700</p>
+                </div>
+                <p class="name">상품명</p>
+                <p class="price">가격</p>
+            </div>
+            <div class="card_box" id="card_box3">
+                <div class="img_box">
+                    <p>600X700</p>
+                </div>
+                <p class="name">상품명</p>
+                <p class="price">가격</p>
+
+            </div>
+            <div class="card_box" id="card_box4">
+                <div class="img_box">
+                    <p>600X700</p>
+                </div>
+                <p class="name">상품명</p>
+                <p class="price">가격</p>
+
+            </div>
+        </div>
     </div>
 
     <script>
+        $('.card_box').append('<div class="order"><p>주문하기</p></div>');
 
-        var Kim = {name: '송이', mbti: 'ENFP', age: '29'}
+        var box = [
+            { name: '딸기 탕후루', price: '4,000' },
+            { name: '거봉 탕후루', price: '3,500' },
+            { name: '블루베리 탕후루', price: '５,000' },
+            { name: '귤 탕후루', price: '2,500' }
+        ];
 
-        document.querySelector('.main-name').innerHTML = Kim.name;
-        document.querySelector('.main-age').innerHTML = Kim.age;
-        document.querySelector('.main-mbti').innerHTML = Kim.mbti;
-    </script> 
+        document.querySelector('.name').innerHTML = box.name;
+        document.querySelector('.price').innerHTML = box.price;
+
+
+        var cdBox = $('.card_box');
+
+        for (let i = 0; i < cdBox.length; i++) {
+            $('.card_box').find('.name').eq(i).html(box[i].name);
+            $('.card_box').find('.price').eq(i).html('가격: ' + box[i].price);
+        }
+
+
+
+        // $('.card_box').find('.name').eq(0).html(box[0].name);
+        // $('.card_box').find('.price').eq(0).html('가격: ' +  box[0].price);
+
+
+        // $('.card_box').find('.name').eq(1).html(box[1].name);
+        // $('.card_box').find('.price').eq(1).html('가격: ' +  box[1].price);
+
+        // $('.card_box').find('.name').eq(2).html(box[2].name);
+        // $('.card_box').find('.price').eq(2).html('가격: ' +  box[2].price); 
+
+
+
+    </script>
 </body>
 
 </html>

@@ -41,3 +41,47 @@ ul.list {
 
   
   /* 레슨 12 */
+
+  /* .card {
+    border: 1px solid #aaa;
+  } */
+
+  .card_box {
+    width: 24.1%;
+    height: auto;
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    padding-bottom: 15px;
+    }
+  
+  .img_box {
+    text-align: center;
+    height: 90px;
+    background-color: #e3e3e3;
+    margin: 0 10px;
+    line-height: 90px;
+    color: #8f8f8f;
+  }
+  
+  .card_box p {
+    margin: 10px;
+  }
+
+  .order {
+    background-color: red;
+    color: #fff;
+    border-radius: 5px; 
+    width: 72px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+  .order p {
+    font-size: 13px;
+    font-weight: 900;
+  }

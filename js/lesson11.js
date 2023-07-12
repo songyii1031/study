@@ -9,24 +9,24 @@ var btn = $('.tab-button');
 
  
 var len = $('.tab-button').length;
-// for (let i = 0; i < len; i++) {
+for (let i = 0; i < len; i++) {
     
-        //반복문 사용시
+       // 반복문 사용시
  
-//     btn.eq(i).on('click', function(){
-//         openTab(i);
-//     });
+    btn.eq(i).on('click', function(){
+        openTab(i);
+    });
  
  
 
-// }
+}
 
 //간단히 만들기
-$('.list').click(function(e){
+// $('.list li').click(function(e){
      
-    console.log(( e.target.dataset.id ))
-    openTab( e.target.dataset.id ); 
-});
+//     console.log(( e.target.dataset.id ))
+//     openTab( e.target.dataset.id ); 
+// });
 
 
 function openTab(a) {
