@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품따라 옵셥 바꾸기</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form class="container my-5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+            <option>모자</option>
+            <option>셔츠</option>
+            <option>바지</option>
+        </select>
+        <select class="form-select mt-2 form-hide">
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+        </select>
+    </form>
+
+
+</body>
+    <script>
+        
+        var pants = [28, 30, 32, 34]; 
+        var shirts = [95, 100, 105]; 
+
+       $('.form-select').eq(0).on('input', function(){
+        var value = this.value;
+
+        // var 템플릿 = `<option>S</option>
+        //     <option>M</option>
+        //     <option>L</option>`;
+        //     $('.form-select').eq(1).html(템플릿);
+
+        if (value == '셔츠') {
+            $('.form-select').eq(1).removeClass('form-hide');
+            $('.form-select').eq(1).html('');
+
+            shirts.forEach(function(b){ 
+                $('.form-select').eq(1).append('<option>'+ b +'</option>');
+            });
+
+        } else if (value == '바지') {
+            $('.form-select').eq(1).removeClass('form-hide');
+            $('.form-select').eq(1).html('');
+            
+            pants.forEach(function(a, i){
+                console.log(a);
+                $('.form-select').eq(1).append('<option>'+ a +'</option>');
+            });
+        }
+       });
+
+       var obj = {name: 'kim', age :20, song :29}
+
+       for (var key in obj ){
+        console.log(obj[key]);
+        
+     }
+
+// -----------------출석부에있는지 찾기------------------------------
+  
+
+    var 출석부 = ['송이', '가혜', '누리', '성은', '송이'];
+
+    function 이름찾기(name){
+        for(var i = 0; i < 출석부.length; i++) {
+            if(name == 출석부[i]) {
+                console.log('있어요');
+              
+            } 
+            return;
+        }   
+
+    } 
+    이름찾기('송이');
+// ---------------- 구구단 출력-------------------------------
+
+
+    // for (let i = 1; i < 10; i++){
+    //     console.log(2 * i) 
+    // }
+    // for (let i = 1; i < 10; i++){
+    //     console.log(3 * i) 
+    // }
+    // for (let i = 1; i < 10; i++){
+    //     console.log(4 * i) 
+    // }
+
+    //위의것을 간단히
+    for (let k = 2; k < 10; k++) {
+        for (let i =1; i < 10; i++){
+            console.log(k * i);
+        }
+    }
+
+// ---------------- 구구단 출력-------------------------------
+
+    var 성적10 = [90, 100, 80, 80];
+    var 성적11 = [80, 90, 70, 80];
+ 
+    </script>
+
+</html>

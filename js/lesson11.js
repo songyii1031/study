@@ -1,6 +1,6 @@
 
+
 var btn = $('.tab-button'); 
- 
 // for (var i = 3; i < 6; i++) {
 //     console.log('안녕');
 // }
@@ -39,3 +39,11 @@ function openTab(a) {
 // btn.eq(i).on('click', function(){ 
 // });
 }
+
+var a = document.createElement('p');
+
+a.innerHTML = '안녕';
+document.querySelector('#test').appendChild(a);
+
+var 탬플릿 = '<p>안녕</p>';
+document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿);
