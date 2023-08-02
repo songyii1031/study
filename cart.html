@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+    integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="css/ajax.css">
+</head>
+
+<body>
+    <div class="ccart"> 장바구니</div> 
+
+    <script>
+
+     var 저장배열 = JSON.parse(localStorage.getItem('cart'));
+
+        var 장바구니 = localStorage.setItem("cart", JSON.stringify(저장배열));
+    
+        console.log(장바구니);
+         
+        장바구니.forEach(function(a, i){
+             var 추가상품 = `<p>${a}</p>`;
+
+             $(".ccart").append(추가상품);
+        });
+
+    </script>
+</body>
+
+</html>

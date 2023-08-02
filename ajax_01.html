@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/ajax.css">
+    <title>Ajax</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <!-- <div class="col-sm-4"> <img src="https://via.placeholder.com/600" class="w-100"> <p>가격 : 70000</p> </div> -->
+
+
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-danger" id="more">더보기</button>
+    </div>
+
+
+    <div class="container">
+        <button class="btn btn-danger" id="price">가격순 정렬</button>
+    </div>
+
+
+    <div class="container">
+        <button class="btn btn-danger" id="title">상품명 정렬</button>
+    </div>
+
+    <div class="container">
+        <button class="btn btn-danger" id="filter">6만원이하</button>
+    </div>
+
+
+    <script>
+
+        function 카드만들기(data) {
+            data.forEach((a, i) => {
+                var tam =
+                    `<div class="col-sm-4"> 
+                  <img src="https://via.placeholder.com/600" class="w-100"> 
+                  <h5 class="tit">${data[i].title}</h5> 
+                  <p>가격 :${data[i].price}</p> 
+                  <button class="buy">구매</button>
+                </div>`;
+
+                $('.row').append(tam);
+            });
+        }
+
+
+        let count = 0;
+
+        $('#more').click(function () {
+            count += count + 1;
+
+            if (count == 1) {
+                $.get('https://codingapple1.github.io/js/more1.json').done((data) => { 카드만들기(data) });
+            }
+            if (count >= 2) {
+                $.get('https://codingapple1.github.io/js/more2.json').done((data) => { 카드만들기(data) });
+            }
+            if (count > 2) {
+                $('#more').attr('disabled', true);
+                // 비활성화 시키는 명령어 disabled
+            }
+        });
+
+
+    </script>
+
+    <script>
+
+        var products = [
+            { id: '0', price: '70000', title: 'Blosson Dress' },
+            { id: '1', price: '50000', title: 'Sprigfield Shirt' },
+            { id: '2', price: '60000', title: 'Black Monastery' }
+        ];
+
+
+
+
+        // localStorage.setItem('이름', 'kim'); 
+
+        // var arr = [1, 2, 3];
+        // var newArr = JSON.stringify(arr);
+
+        // localStorage.setItem('num', newArr );
+        // var 꺼낸거 = localStorage.getItem('num');
+
+        // console.log(JSON.parse(꺼낸거));
+
+
+
+
+
+        $('#filter').click(function () {
+            var newFilter = products.filter(function (a) {
+                return a.price <= 60000
+            });
+            // console.log(newFilter)  
+            $('.row').html('');
+
+            newFilter.forEach((a, i) => {
+                var tam =
+                    `<div class="col-sm-4"> 
+                 <img src="https://via.placeholder.com/600" class="w-100"> 
+                 <h5 class="tit">${newFilter[i].title}</h5> 
+                 <p>가격 :${newFilter[i].price}</p> 
+                 <button class="buy">구매</button>
+             </div>`;
+                $('.row').append(tam);
+
+
+            });
+        });
+
+        $('#price').click(function () {
+            products.sort(function (a, b) {
+                return a.price - b.price
+            });
+
+            $('.row').html('');
+
+            products.forEach((a, i) => {
+                var tam =
+                    `<div class="col-sm-4"> 
+                 <img src="https://via.placeholder.com/600" class="w-100"> 
+                 <h5 class="tit">${a.title}</h5> 
+                 <p>가격 :${a.price}</p> 
+                 <button class="buy">구매</button>
+             </div>`;
+                $('.row').append(tam);
+
+
+            });
+        });
+
+
+
+        $('#title').click(function () {
+            products.sort(function (a, b) {
+                if (a.title > b.title) {
+                    return 1
+                } else {
+                    return -1
+                }
+            });
+
+            $('.row').html('');
+
+            products.forEach((a, i) => {
+                var tam =
+                    `<div class="col-sm-4"> 
+                 <img src="https://via.placeholder.com/600" class="w-100"> 
+                 <h5 class="tit">${a.title}</h5> 
+                 <p>가격 :${a.price}</p> 
+                 <button class="buy">구매</button>
+             </div>`;
+                $('.row').append(tam);
+
+
+            });
+        });
+
+        products.forEach((a, i) => {
+            var tam =
+                `<div class="col-sm-4"> 
+                 <img src="https://via.placeholder.com/600" class="w-100"> 
+                 <h5 class="tit">${a.title}</h5> 
+                 <p>가격 :${a.price}</p> 
+                 <button class="buy">구매</button>
+             </div>`;
+
+            $('.row').append(tam);
+
+        });
+
+
+        // Array
+        var 어레이 = [7, 6, 5, 4, 10];
+        var 어레이2 = ['a', 'g', 'f', 't', 'c'];
+
+
+        // 어레이.sort(function (a, b) {
+        //     return a - b
+        // });
+
+        var 새어레이 = 어레이.filter(function (a) {
+            return a < 6
+        });
+
+        //문자 역순 정렬
+        어레이2.sort((a, b) => {
+            if (a < b) return 1;
+            if (a == b) return 0;
+            if (a > b) return -1;
+        })
+
+        console.log(어레이);
+        console.log(어레이2);
+        console.log(새어레이);
+
+
+
+        //구매 버튼 누르면 저장
+
+        // $('.buy').click(function (e) {
+        //     var tTitle = $(e.target).siblings('h5').text(); 
+
+        //     if(localStorage.getItem('cart') != null) {
+        //         var getTem = JSON.parse(localStorage.cart);
+
+        //      getTem.push(tTitle);
+        //       localStorage.setItem('cart', JSON.stringify(getTem));
+
+        //     } 
+        //     else {
+        //         localStorage.setItem('cart', JSON.stringify([tTitle]));
+        //     } 
+         
+        // });
+
+
+        $('.buy').click(function(e){
+
+           var titleTwo =  $(e.target).siblings('h5').text();
+
+            //이미 카트라는 항목이 로컬스트리지에 있다면~
+           if(localStorage.getItem('cart') != null ){
+             var titleArr = JSON.parse(localStorage.cart);
+
+                titleArr.push(titleTwo);
+                localStorage.setItem('cart', JSON.stringify(titleArr));
+            //그게 아니라면~
+           } else {
+            localStorage.setItem('cart', JSON.stringify([titleTwo]));
+           }
+        })
+
+    </script>
+</body>
+
+</html>
