@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/lesson16.css">
+    <title>vw 슬라이드</title>
+</head>
+
+<body>
+    <div style="overflow: hidden">
+        <div class="slide_container">
+            <div class="slide_box">
+                <img src="images/ls14_1.png" alt="" draggable="false">
+            </div>
+            <div class="slide_box">
+                <img src="images/ls14_2.png" alt="" draggable="false">
+            </div>
+            <div class="slide_box">
+                <img src="images/ls14_3.png" alt="" draggable="false">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        var 시작좌표 = 0;
+        var 눌렀냐 = false;
+
+        $('.slide_box').eq(0).on('mousedown', function(e) {
+             시작좌표 = e.clientX;
+
+            눌렀냐 = true;
+        });
+
+        $('.slide_box').eq(0).on('mousemove', function(e) {
+             console.log( e.clientX - 시작좌표);
+
+             if(눌렀냐 == true){
+                $('.slide_container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+             } 
+        });
+
+
+        $('.slide_box').eq(0).on('mouseup', function(e) {
+            눌렀냐 = false;
+
+            if (e.clientX - 시작좌표 < -100){
+                $('.slide_container')
+                .css('transition', 'all 0.5s')
+                .css('transform', 'translateX(-100vw)');
+            } else {
+                $('.slide_container')
+                .css('transition', 'all 0.5s')
+                .css('transform', 'translateX(0vw)');
+            }
+
+            setTimeout(()=>{
+                $('.slide_container').css('transition', 'all 0.5s');
+            });
+          
+        });
+    </script>
+
+ 
+</body>
+
+</html>

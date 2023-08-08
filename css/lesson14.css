@@ -15,4 +15,15 @@
 .text {
     float: right;
     width: 300px;
+    margin-top: 300px;
+}
+
+.text2 {
+    float: right;
+    width: 300px;
+    margin-top: 300px;
+}
+
+.slide_box img {
+    width: 40%;
 }

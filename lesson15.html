@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>sticky</title>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="css/lesson15.css">
+</head>
+
+<body>
+
+   <div class="card-background">
+
+      <div class="card-box"><img src="images/ls14_1.png" alt=""></div>
+      <div class="card-box"><img src="images/ls14_2.png" alt=""></div>
+      <div class="card-box"><img src="images/ls14_3.png" alt=""></div>
+
+   </div>
+
+   <script>
+
+
+
+      $(window).scroll(function () {
+
+         var 높이 = $(window).scrollTop();
+         console.log(높이);
+
+         var y = -1 / 500 * 높이 + 115 / 50;
+         var s = -1 / 5000 * 높이 + 565 / 500;
+         $('.card-box').eq(0).css('opacity', y)
+         $('.card-box').eq(0).css('transform', `scale(${s})`);
+      
+      });
+
+
+   </script>
+</body>
+
+</html>

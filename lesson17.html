@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="stylesheet" href="css/lesson17.css">
+    <title>Switch</title>
+</head>
+
+<body>
+ 
+    <div id="quiz">
+        <h4>물에 빠지면 누구먼저 구할 것임?</h4>
+        <button>와이프</button>
+        <button>부모님</button>
+        <button>키우던 개</button>
+    </div>
+   
+ 
+ 
+    <script>
+
+        // let 변수 = 2 + 5;
+        // switch (변수) {
+
+        //     case 3: 
+        //     alert('변수가 3이네요');
+
+        //         break 
+        //     case 4:
+        //         alert('변수가4이네요');
+        //         break
+
+        //         default:
+        //             alert('아무것도 해당 안됨');
+                
+        //     }
+
+
+    //본문
+
+            document.querySelector('#quiz').addEventListener('click', 
+            
+            function(e){
+                switch (e.target.innerHTML) {
+                    case '와이프':
+                        alert('와이프를 좋아하시네요');
+
+                        break
+
+                    case '부모님':
+                        alert('효자시네요');
+                        break
+
+                    case '키우던 개':
+                        alert('애견인이시네요');
+
+                        break
+                }
+
+
+            });
+
+    </script>
+</body>
+
+</html>
